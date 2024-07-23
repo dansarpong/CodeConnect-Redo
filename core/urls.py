@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 import users.views, chatrooms.views
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 
 urlpatterns = [
@@ -17,4 +18,4 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', users.views.CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', users.views.CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('accounts/', include('django.contrib.auth.urls')),
-]
+] + debug_toolbar_urls()
