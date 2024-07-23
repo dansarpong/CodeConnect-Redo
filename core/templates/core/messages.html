@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{% static 'core/css/messages.css' %}">
+    </head>
+    <body>
+        <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
+        <div class="side-bar-container">
+            <div class="side-bar">
+                <h1 class="code-connect">
+                    Code Connect
+                </h1>
+                <div class="buttons">
+                    <a href="" class="home-container">
+                        <img src="{% static 'core/img/icons8_home_500px.png' %}" alt="" class="home-img">
+                        <h1 class="home">
+                            Home
+                        </h1>
+                    </a>
+                    <div class="menu-btn-container">
+                        <button id="menu-btn">
+                            <div class="new-channel-container">
+                                <img src="{% static 'core/img/icons8_new_message_96px_1.png' %}" alt="" class="new-message">
+                                <h1 class="new-channel">New Channel</h1>
+                            </div>
+                            <img src="{% static 'icons8_down_button.svg' %}" alt="" class="img-btn">
+                        </button>
+    
+                        <div id="dropdown" class="hidden">
+                            <hr class="rule">
+                            <a href="#" class="create-channel-container">
+                                <img src="{% static 'core/img/icons8_create.svg' %}" alt="" class="channel-img">
+                                <h1 class="create-channel">
+                                    Create Channel
+                                </h1>
+                            </a>
+                            <a href="#" class="join-channel-container">
+                                <img src="{% static 'core/img/icons8_add_to_inbox.svg' %}" alt="" class="join-channel-img">
+                                <h1 class="join-channel">Join Channel</h1>
+                            </a>
+                        </div>
+                        <script>
+                            window.addEventListener('DOMContentLoaded', ()=> {
+                                const menuBtn = document.querySelector('#menu-btn')
+                                const dropdown = document.querySelector('#dropdown')
+    
+                                menuBtn.addEventListener('click', () => {
+                                    if(dropdown.classList.contains('hidden')){
+                                        dropdown.classList.remove('hidden');
+                                        dropdown.classList.add('flex');
+                                    } else{
+                                        dropdown.classList.remove('flex')
+                                        dropdown.classList.add('hidden')
+                                    }
+                                    // dropdown.classList.toggle('hidden')
+                                    // dropdown.classList.toggle('flex')
+                                })
+                            })
+                        </script>
+                    </div>
+    
+                    <div class="settings-container">
+                        <button id="men-btn">
+                            <div class="settings-container-container">
+                                <img src="{% static 'core/img/icons8_settings_208px.png' %}" alt="" class="settings-cont-img">
+                                <h1 class="settings">Settings</h1>
+                            </div>
+                            <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img">
+                        </button>
+    
+                        <div id="dropdon" class="hidden">
+                            <hr class="rule">
+                            <a href="#" class="account-container">
+                                <img src="{% static 'core/img/icons8_admin_settings_male.svg' %}" alt="" class="account-container-img">
+                                <h1 class="account">Account</h1>
+                            </a>
+                            <a href="#" class="notification-container">
+                                <img src="{% static 'core/img/icons8_bell.svg' %}" alt="" class="notification-container-img">
+                                <h1 class="notification">Notifications</h1>
+                            </a>
+                            <a href="#" class="help-container">
+                                <img src="{% static 'core/img/icons8_help.svg'}" alt="" class="help-container-img">
+                                <h1 class="help">Help</h1>
+                            </a>
+                        </div>
+                        <script>
+                            window.addEventListener('DOMContentLoaded', ()=> {
+                                const menuBtn = document.querySelector('#men-btn')
+                                const dropdown = document.querySelector('#dropdon')
+                                
+                                menuBtn.addEventListener('click', () => {
+                                    if(dropdown.classList.contains('hidden')) {
+                                        dropdown.classList.remove('hidden');
+                                        dropdown.classList.add('flex');
+                                    } else{
+                                        dropdown.classList.remove('flex')
+                                        dropdown.classList.add('hidden')
+                                    }
+                                })
+                            })
+                        </script>
+                    </div>
+                    
+                </div>
+    
+                <!-- Notification -->
+                 <div class="notification-section-container">
+                    <div class="notification-section-container-container">
+                        <h1 class="notification-section">Notifications</h1>
+                        <button type="button" class="notification-btn">
+                            <img src="{% static 'core/img/icons8_right_96px.png' %}" alt="" class="button-img">
+                        </button>
+                    </div>
+                    <div class="notification-messages">
+                        <div class="each-notification">
+                            <div class="avatar">
+                                <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                            </div>
+                            <p class="message-text">
+                                If you need to stop reading before you reach the end, word remembers where you
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notification-messages">
+                        <div class="each-notification">
+                            <div class="avatar">
+                                <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                            </div>
+                            <p class="message-text">
+                                If you need to stop reading before you reach the end, word remembers where you
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notification-messages">
+                        <div class="each-notification">
+                            <div class="avatar">
+                                <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                            </div>
+                            <p class="message-text">
+                                If you need to stop reading before you reach the end, word remembers where you
+                            </p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <div class="right-side-container">
+            <h1 class="message2">
+                Messages
+            </h1>
+            <div class="search-container2">
+                <div class="search2-container">
+                    <input type="text" placeholder="Search for messages or channels" class="search2">
+                    <!-- avatar -->
+                     <div class="search-img-container2">
+                        <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg'}" alt="" class="search-img2">
+                     </div>
+                </div>
+                <!-- messages -->
+                <div class="messages2">
+                    <!-- messagesCard -->
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="{% static 'core/img/icons8_lock_480px.png' %}" alt="" class="lock-img">
+                <h1 class="text-end">End-to-End-Encrypted</h1>
+            </div>
+        </div>
+</body>
+</html>
