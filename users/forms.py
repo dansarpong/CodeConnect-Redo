@@ -5,12 +5,12 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ('email', 'first_name', 'last_name', 'username')
+        fields = ('email', 'username')
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
-        fields = ('email', 'first_name', 'last_name', 'username')
+        fields = ('email', 'username')
 
 class CustomPasswordResetForm(PasswordResetForm):
     email = forms.EmailField(label="Email", max_length=254)
