@@ -15,12 +15,11 @@
                 <h1>
                     Login To Your Account
                 </h1>
-                <div id="errorMessage">
-                    <p>
-                        An error occured. Please check your details and try again!
-                    </p>
+                <div id="errorMessage" class="{% if error_occured %}block{% else %}hidden{% endif %} w-[60%] bg-red-200 text-red-700 p-2 rounded-lg mb-2">
+                    <p>Invalid login credentials!</p>
                 </div>
-                <form action="" id="login-form">
+                <form action="{% url 'dashboard' %}" id="login-form" method="POST">
+                    {% csrf_token %}
                     <input type="email" class="email" placeholder="Enter your email">
                     <input type="password" placeholder="Password">
                     <a href="#" class="forgot-password-container">
