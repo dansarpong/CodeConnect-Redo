@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordR
 from django.views.generic.edit import FormView
 
 
-def login(request):
+def login_user(request):
     if request.method == "POST":
             username = request.POST['email']
             password = request.POST['password']
@@ -41,6 +41,10 @@ def profile(request):
     else:
         form = CustomUserChangeForm(instance=request.user)
     return render(request, 'core/profile.html', {'form': form})
+
+@login_required
+def dashboard(request):
+    return render(request, 'core/dashboard.html')
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'core/password_reset.html'

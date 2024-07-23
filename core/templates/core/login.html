@@ -20,8 +20,8 @@
                 </div>
                 <form action="{% url 'dashboard' %}" id="login-form" method="POST">
                     {% csrf_token %}
-                    <input type="email" class="email" placeholder="Enter your email">
-                    <input type="password" placeholder="Password">
+                    <input type="email" class="email" name="email" placeholder="Enter your email">
+                    <input type="password" name="password" placeholder="Password">
                     <a href="#" class="forgot-password-container">
                         <p class="forgot-password">
                             Forgot Password?
