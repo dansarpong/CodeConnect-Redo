@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-class Chatrooms(models.Model):
+CustomUser = get_user_model()
+
+class Chatroom(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='chatrooms')

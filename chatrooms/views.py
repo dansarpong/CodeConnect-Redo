@@ -1,11 +1,6 @@
-from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
-from django.urls import reverse_lazy
-from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
 from .models import Chatroom
-from django.views.generic.edit import FormView
 
 
 @login_required
@@ -29,3 +24,8 @@ def generate_unique_auth_link():
     import uuid
     return str(uuid.uuid4())
 
+@login_required
+def leave_chatroom(request, chatroom_id):
+    chatroom = get_object_or_404(Chatroom, id=chatroom_id)
+    chatroom.remove_member(request.user)
+    return redirect('dashboard')

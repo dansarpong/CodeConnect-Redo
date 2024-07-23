@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Chatrooms
+from .models import Chatroom
 
 
-admin.site.register(Chatrooms)
+admin.site.register(Chatroom)
