@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Connect</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'core/css/chat.css' %}">
 </head>
 <body>
     <div class="container">
@@ -12,7 +13,7 @@
             <!-- header -->
             <div class="header">
                 <div class="userimg">
-                    <img src="img/icons8_customer_208px.png" alt="userimg" class="cover">
+                    <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
                 </div>
                 <ul class="nav_icons">
                     <li><ion-icon name ="scan-circle-outline"></ion-icon></li>
@@ -31,7 +32,7 @@
             <div class="chatlist">
                 <div class="block active">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -45,7 +46,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %} " alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -60,7 +61,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -75,7 +76,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -90,7 +91,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -105,7 +106,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -120,7 +121,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -135,7 +136,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -150,7 +151,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -165,7 +166,7 @@
                 </div>
                 <div class="block unread">
                     <div class="imgbx">
-                        <img src="img/icons8_male_user.svg" alt="profile icon" class="cover">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
@@ -185,7 +186,7 @@
             <div class="header">
                 <div class="imgText">
                     <div class="userimg">
-                        <img src="img/icons8_customer_208px.png" alt="userimg" class="cover">
+                        <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
                     </div>
                     <h4>
                         Software Engineering 201
@@ -199,29 +200,61 @@
             <!-- chatbox -->
             <div class="chatBox">
                 <div class="message my_message">
-                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span></p>
+                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span>
+                    
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
                 </div>
                 <div class="message group_message">
-                    <p>Hello<br><span>12:15</span></p>
+                    <p>Hello<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
                 </div>
                 <div class="message my_message">
-                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span></p>
+                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
                 </div>
                 <div class="message group_message">
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span></p>
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
                 </div>
                 <div class="message group_message">
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span></p>
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button></p>
                 </div>
                 <div class="message my_message">
-                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span></p>
+                    <p>Hi Welcome to my sdfsds sldfsdfsd sdfsdfsdfdsf<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button></p>
                 </div>
                 <div class="message group_message">
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span></p>
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly<br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
                 </div>
                 <div class="message group_message">
                     <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.
-                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. <br><span>12:15</span></p>
+                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. <br><span>12:15</span>
+                        <button class="cybermarks">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                    </p>
+                    
                 </div>
             </div>
              <!-- chat input -->
