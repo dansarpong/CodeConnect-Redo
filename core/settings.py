@@ -19,16 +19,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users'
+    'debug_toolbar', # Add debug_toolbar to the list of installed apps
+    'channels',
+    'users',
+    'chatrooms',
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware", # Add debug_toolbar middleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,7 +61,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+# WSGI_APPLICATION = 'core.wsgi.application'
+ASGI_APPLICATION = 'core.asgi.application'
 
 
 # Database
@@ -108,6 +114,11 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     'core/static'
+]
+
+# Debug toolbar settings
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 # Default primary key field type
