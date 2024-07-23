@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Start</title>
+    <link rel="stylesheet" href="{% static 'core/css/forgot-fresh_start.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="container-cont">
+            <div class="container-cont-cont">
+                <p class="welcome">
+                    Welcome! <br>
+                    Let's get you sorted
+                </p>
+                <div class="menu-container">
+                    <div class="new-channel-cont">
+                        <img src="{% static 'core/img/icons8_new_message_96px.png' %}" alt="" class="new-channel-img">
+                        <h1 class="new-channel-text">New Channel</h1>
+                    </div>
+                    <div class="profile-container">
+                        <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="profile-img">
+                        <h1 class="profile-text">Profile</h1>
+                    </div>
+                    <div class="settings-cont">
+                        <img src="{% static 'core/img/icons8_settings_1.svg' %}" alt="" class="settings-img">
+                        <h1 class="settings-text">
+                            Settings
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
