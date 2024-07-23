@@ -7,8 +7,18 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordR
 from django.views.generic.edit import FormView
 
 
-def home(request):
-    return render(request, 'core/login.html')
+def login(request):
+    if request.method == "POST":
+            username = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('dashboard')
+            else:
+                return render(request, 'core/login.html', {'error_occured': True})
+    else:
+            return render(request, 'core/login.html')
 
 def register(request):
     if request.method == 'POST':
