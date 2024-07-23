@@ -8,30 +8,146 @@
     <link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}">
 </head>
 <body>
-    <img src="{% static 'core/img/sec.png' %}" alt="">
+    <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
     <div class="side-bar-container">
         <div class="side-bar">
             <h1 class="code-connect">
                 Code Connect
             </h1>
             <div class="buttons">
-                <a href="">
-                    <img src="{% static 'core/img/icons8_home_500px.png' %}" alt="">
+                <a href="" class="home-container">
+                    <img src="{% static 'core/img/icons8_home_500px.png' %}" alt="" class="home-img">
                     <h1 class="home">
                         Home
                     </h1>
                 </a>
-                <div class="">
+                <div class="menu-btn-container">
                     <button id="menu-btn">
                         <div class="new-channel-container">
-                            <img src="{% static 'core/img/icons8_new_message_96px_1.png' %}" alt="">
+                            <img src="{% static 'core/img/icons8_new_message_96px_1.png' %}" alt="" class="new-message">
                             <h1 class="new-channel">New Channel</h1>
                         </div>
-                        <img src="{% static 'core/img/icons8_down_button.svg'}" alt="">
+                        <img src="{% static 'icons8_down_button.svg' %}" alt="" class="img-btn">
+                    </button>
+
+                    <div id="dropdown" class="hidden">
+                        <hr class="rule">
+                        <a href="#" class="create-channel-container">
+                            <img src="{% static 'core/img/icons8_create.svg' %}" alt="" class="channel-img">
+                            <h1 class="create-channel">
+                                Create Channel
+                            </h1>
+                        </a>
+                        <a href="#" class="join-channel-container">
+                            <img src="{% static 'core/img/icons8_add_to_inbox.svg' %}" alt="" class="join-channel-img">
+                            <h1 class="join-channel">Join Channel</h1>
+                        </a>
+                    </div>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', ()=> {
+                            const menuBtn = document.querySelector('#menu-btn')
+                            const dropdown = document.querySelector('#dropdown')
+
+                            menuBtn.addEventListener('click', () => {
+                                if(dropdown.classList.contains('hidden')){
+                                    dropdown.classList.remove('hidden');
+                                    dropdown.classList.add('flex');
+                                } else{
+                                    dropdown.classList.remove('flex')
+                                    dropdown.classList.add('hidden')
+                                }
+                                // dropdown.classList.toggle('hidden')
+                                // dropdown.classList.toggle('flex')
+                            })
+                        })
+                    </script>
+                </div>
+
+                <div class="settings-container">
+                    <button id="men-btn">
+                        <div class="settings-container-container">
+                            <img src="{% static 'core/img/icons8_settings_208px.png' %}" alt="" class="settings-cont-img">
+                            <h1 class="settings">Settings</h1>
+                        </div>
+                        <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img">
+                    </button>
+
+                    <div id="dropdon" class="hidden">
+                        <hr class="rule">
+                        <a href="#" class="account-container">
+                            <img src="{% static 'core/img/icons8_admin_settings_male.svg' %}" alt="" class="account-container-img">
+                            <h1 class="account">Account</h1>
+                        </a>
+                        <a href="#" class="notification-container">
+                            <img src="{% static 'core/img/icons8_bell.svg' %}" alt="" class="notification-container-img">
+                            <h1 class="notification">Notifications</h1>
+                        </a>
+                        <a href="#" class="help-container">
+                            <img src="{% static 'core/img/icons8_help.svg'}" alt="" class="help-container-img">
+                            <h1 class="help">Help</h1>
+                        </a>
+                    </div>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', ()=> {
+                            const menuBtn = document.querySelector('#men-btn')
+                            const dropdown = document.querySelector('#dropdon')
+                            
+                            menuBtn.addEventListener('click', () => {
+                                if(dropdown.classList.contains('hidden')) {
+                                    dropdown.classList.remove('hidden');
+                                    dropdown.classList.add('flex');
+                                } else{
+                                    dropdown.classList.remove('flex')
+                                    dropdown.classList.add('hidden')
+                                }
+                            })
+                        })
+                    </script>
+                </div>
+                
+            </div>
+
+            <!-- Notification -->
+             <div class="notification-section-container">
+                <div class="notification-section-container-container">
+                    <h1 class="notification-section">Notifications</h1>
+                    <button type="button" class="notification-btn">
+                        <img src="{% static 'core/img/icons8_right_96px.png' %}" alt="" class="button-img">
                     </button>
                 </div>
-            </div>
+                <div class="notification-messages">
+                    <div class="each-notification">
+                        <div class="avatar">
+                            <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                        </div>
+                        <p class="message-text">
+                            If you need to stop reading before you reach the end, word remembers where you
+                        </p>
+                    </div>
+                </div>
+                <div class="notification-messages">
+                    <div class="each-notification">
+                        <div class="avatar">
+                            <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                        </div>
+                        <p class="message-text">
+                            If you need to stop reading before you reach the end, word remembers where you
+                        </p>
+                    </div>
+                </div>
+                <div class="notification-messages">
+                    <div class="each-notification">
+                        <div class="avatar">
+                            <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg' %}" alt="" class="avatar-img">
+                        </div>
+                        <p class="message-text">
+                            If you need to stop reading before you reach the end, word remembers where you
+                        </p>
+                    </div>
+                </div>
+             </div>
         </div>
+        <iframe src="{% url 'register' %}" frameborder="0"></iframe>
     </div>
 </body>
 </html>
