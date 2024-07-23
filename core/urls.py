@@ -1,14 +1,17 @@
 from django.contrib import admin
 from django.urls import path, include
-import users.views, chatrooms.views
 from debug_toolbar.toolbar import debug_toolbar_urls
+
+import users.views, chatrooms.views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', users.views.login_user, name='login'),
-    path('register/', users.views.register, name='register'),
+    path('', users.views.signin, name='signin'),
+    path('signup/', users.views.signup, name='signup'),
     path('dashboard/', users.views.dashboard, name='dashboard'),
+    path('basic_view/', users.views.basic_view, name='basic_view'),
+    path('fresh_view/', users.views.fresh_view, name='fresh_view'),
     path('profile/', users.views.profile, name='profile'),
     path('create_chatroom/', chatrooms.views.create_chatroom, name='create_chatroom'),
     path('join_chatroom/<str:auth_link>/', chatrooms.views.join_chatroom, name='join_chatroom'),
@@ -17,5 +20,4 @@ urlpatterns = [
     path('password_reset/done/', users.views.CustomPasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', users.views.CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', users.views.CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('accounts/', include('django.contrib.auth.urls')),
 ] + debug_toolbar_urls()

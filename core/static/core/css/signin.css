@@ -118,7 +118,7 @@ body{
 }
 
 .small-div{
-    background-image: url('pngwing.com.png');
+    background-image: url('/static/img/pngwing.com.png');
     width: 40%;
     height: 100%;
     background: linear-gradient(198deg, #128C7E 0.82%, #39B78F 99.18%);

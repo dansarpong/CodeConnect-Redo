@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/signin.css' %}">
 </head>
 <body>
     <img src="{% static 'core/img/bg_img.png' %}" alt="" class="bg-img">
@@ -15,24 +15,13 @@
                 <h1>
                     Login To Your Account
                 </h1>
-<<<<<<< HEAD
                 <div id="errorMessage" class="{% if error_occured %}block{% else %}hidden{% endif %} w-[60%] bg-red-200 text-red-700 p-2 rounded-lg mb-2">
                     <p>Invalid login credentials!</p>
                 </div>
-                <form action="{% url 'dashboard' %}" id="login-form" method="POST">
+                <form action="{% url 'signin' %}" id="login-form" method="POST">
                     {% csrf_token %}
                     <input type="email" class="email" name="email" placeholder="Enter your email">
                     <input type="password" name="password" placeholder="Password">
-=======
-                <div id="errorMessage">
-                    <p>
-                        An error occured. Please check your details and try again!
-                    </p>
-                </div>
-                <form action="" id="login-form">
-                    <input type="email" class="email" placeholder="Enter your email">
-                    <input type="password" placeholder="Password">
->>>>>>> Frontend
                     <a href="#" class="forgot-password-container">
                         <p class="forgot-password">
                             Forgot Password?
@@ -41,7 +30,6 @@
                     <button id="login-button" type="submit">
                             Sign In
                     </button>
-                    
                 </form>
             </div>
             <div class="small-div">
@@ -51,7 +39,7 @@
                 <p class="des-text">
                     Sign Up and enjoy a new world of collaboration
                 </p>
-                <a href="{% url 'register' %}">
+                <a href="{% url 'signup' %}">
                     <button class="sign-up-btn">
                         Sign Up
                     </button>

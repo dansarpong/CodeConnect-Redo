@@ -83,7 +83,7 @@
                             <h1 class="notification">Notifications</h1>
                         </a>
                         <a href="#" class="help-container">
-                            <img src="{% static 'core/img/icons8_help.svg'}" alt="" class="help-container-img">
+                            <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="help-container-img">
                             <h1 class="help">Help</h1>
                         </a>
                     </div>
@@ -147,7 +147,7 @@
                 </div>
              </div>
         </div>
-        <iframe src="{% url 'register' %}" frameborder="0"></iframe>
+        <iframe src="{% if request.session.new_user %}{% url 'fresh_view' %}{% else %}{% url 'basic_view' %}{% endif %}" frameborder="0"></iframe>
     </div>
 </body>
 </html>

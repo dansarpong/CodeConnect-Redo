@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'core/css/signup.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <img src="{% static 'core/img/bg_img.png' %}" alt="" class="bg-img">
+        <div class="small-div-main">
+            <div class="small-div">
+                <h1 class="welcome-back">
+                    Welcome Back!
+                </h1>
+                <h1 class="keep">
+                    To keep connected to us please login with your persnal info
+                </h1>
+                <a href="{% url 'signin' %}">
+                    <button class="sign-in-btn">
+                        Sign In
+                    </button>
+                </a>
+            </div>
+            <div class="big-div">
+                <h1 class="create">
+                    Create Account
+                </h1>
+                <!-- hidden div to show error -->
+                <div id="errorMessage">
+                    <p>
+                        An error occured. Please check your details and try again!
+                    </p>
+                </div>
+                <form action="{% url 'signup' %}" id="register-form" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Enter your username" value="{{ form.username.value|default_if_none:'' }}" class="{{ form.username.css_classes }}">
+                    <input type="email" name="email" placeholder="Enter your email" value="{{ form.email.value|default_if_none:'' }}" class="{{ form.email.css_classes }}">
+                    <input type="password" name="password1" placeholder="Choose your password" class="{{ form.password1.css_classes }}">
+                    <input type="password" name="password2" placeholder="Confirm your password" class="{{ form.password2.css_classes }}">
+                    <!-- Display form errors for each field -->
+                    {% if form.username.errors %}
+                        <div class="error">{{ form.username.errors.as_text }}</div>
+                    {% endif %}
+                    {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors.as_text }}</div>
+                    {% endif %}
+                    {% if form.password1.errors %}
+                        <div class="error">{{ form.password1.errors.as_text }}</div>
+                    {% endif %}
+                    {% if form.password2.errors %}
+                        <div class="error">{{ form.password2.errors.as_text }}</div>
+                    {% endif %}
+                    <div class="btn-container">
+                        <button id="sign-up-btn">
+                            Sign up
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

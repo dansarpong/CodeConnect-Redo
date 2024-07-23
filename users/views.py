@@ -1,26 +1,28 @@
-from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.urls import reverse_lazy
-from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
+from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.clickjacking import xframe_options_exempt
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+
+from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
 
 
-def login_user(request):
+def signin(request):
     if request.method == "POST":
-            username = request.POST['email']
-            password = request.POST['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('dashboard')
-            else:
-                return render(request, 'core/login.html', {'error_occured': True})
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+        else:
+            return render(request, 'core/signin.html', {'error_occured': True})
     else:
-            return render(request, 'core/login.html')
+        return render(request, 'core/signin.html')
 
-def register(request):
+def signup(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
@@ -29,7 +31,7 @@ def register(request):
             return redirect('dashboard')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'core/register.html', {'form': form})
+    return render(request, 'core/signup.html', {'form': form})
 
 @login_required
 def profile(request):
@@ -44,7 +46,26 @@ def profile(request):
 
 @login_required
 def dashboard(request):
+    request.session['new_user'] = is_new_user(request.user)
+    print(request.session['new_user'])
     return render(request, 'core/dashboard.html')
+
+@login_required
+@xframe_options_exempt
+def basic_view(request):
+    return render(request, 'core/basic_view.html')
+
+@login_required
+@xframe_options_exempt
+def fresh_view(request):
+    return render(request, 'core/fresh_view.html')
+
+def is_new_user(user):
+    from datetime import timedelta
+    from django.utils import timezone
+    time = timezone.now() - user.date_joined
+    print(time)
+    return (timezone.now() - user.date_joined) <= timedelta(hours=24)
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'core/password_reset.html'
@@ -61,4 +82,3 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'core/password_reset_complete.html'
-    
