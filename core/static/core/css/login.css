@@ -1,8 +1,164 @@
-/* social contacts */
-.socialContainer{
-    @apply bg-black w-full flex items-center justify-center gap-3
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik, sans-serif;
 }
 
-.socialImages{
-    @apply size-10
+body{
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.main-container{
+    width: 70%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--tw-shadow);
+    border-radius: 1rem;
+}
+
+.bg-img{
+    width: 100%;
+    height: 100%;
+    object-position: cover;
+    position: absolute;
+}
+
+.form-div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 100%;
+}
+
+.big-div{
+    width: 60%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-div h1{
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #313E51;
+    font-family: Rubik;
+    line-height: normal; 
+}
+
+#errorMessage{
+    width: 60%;
+    background: #EE5454;
+    color: #fff;
+    font-family: Rubik;
+    line-height: normal;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    display: none;
+}
+#login-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+#login-form input{
+    width: 100%;
+    height: 2.5rem;
+    background: #EBF1EF;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+}
+
+.forgot-password{
+    color: #EE5454;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.forgot-password-container{
+    width: 100%; 
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#login-button {
+        width: 40%;
+        height: 2.5rem; 
+        background-color: #128c7e;
+        color: #fff; 
+        border: none; 
+        border-radius: 0.5rem; 
+        font-size: 1rem; 
+        font-weight: 500; 
+        cursor: pointer; 
+        margin-top: 1rem; 
+}
+
+.small-div{
+    background-image: url('pngwing.com.png');
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(198deg, #128C7E 0.82%, #39B78F 99.18%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem;   
+    gap: 1rem;
+}
+
+.new-here{
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.9rem;
+}
+
+.des-text{
+    width: 80%;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.sign-up-btn{
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: #fff;
+    color: #313E51;
+    text-align: center;
+    margin-left: 4rem; 
+    margin-right: 4rem;
+    border-style: none;
+    border-radius: 1rem;
+    padding: 0.75rem; 
+    width: 50%;
+    margin-top: 1.25rem; 
+    margin-bottom: 1.25rem; 
+    cursor: pointer;
 }

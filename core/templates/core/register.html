@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link href="css/output.css" rel="stylesheet" />
-    <link href="css/login.css" rel="stylesheet" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'core/css/register.css' %}">
 </head>
-<body class="h-screen w-full bg-white flex items-center justify-center py-5">
-    <!-- main container -->
-    <div class="w-[70%] h-full shadow-xl bg-white rounded-2xl overflow-hidden relative">
-        <img src="img/bg_img.png" alt="" class="w-full h-full object-cover absolute ">
-        <div class="relative w-full flex h-full">
-            <!-- small div -->
-            <div class="w-[40%] h-full from-teal-700 to-teal-700 bg-gradient-to-tr flex items-center justify-center flex-col px-2">
-                <h1 class="text-white text-3xl font-bold mb-4">Welcome Back!</h1>
-                <h1 class="w-[80%] text-center text-xl mb-4 text-white font-semibold">To keep connected to us please login with your personal info</h1>
+<body>
+    <div class="main-container">
+        <img src="{% static 'core/img/bg_img.png' %}" alt="" class="bg-img">
+        <div class="small-div-main">
+            <div class="small-div">
+                <h1 class="welcome-back">
+                    Welcome Back!
+                </h1>
+                <h1 class="keep">
+                    To keep connected to us please login with your persnal info
+                </h1>
                 <a href="{% url 'login' %}">
-                    <button class="bg-white text-black text-center mx-16 rounded-2xl p-3 w-1/2 my-5">Sign in</button>
+                    <button class="sign-in-btn">
+                        Sign In
+                    </button>
                 </a>
             </div>
-            <!-- big div -->
-            <div class="w-[60%] h-full bg-white-500 flex flex-col items-center justify-center">
-                <h1 class="text-4xl font-bold text-gray-700 mb-3">Create Account</h1>
-                <!-- a hidden div to show error -->
-                <div id="errorMessage" class="hidden w-[60%] bg-red-200 text-red-700 p-2 rounded-lg mb-2">
-                    <p>An error occurred. Please check your details and try again!</p>
+            <div class="big-div">
+                <h1 class="create">
+                    Create Account
+                </h1>
+                <!-- hidden div to show error -->
+                <div id="errorMessage">
+                    <p>
+                        An error occured. Please check your details and try again!
+                    </p>
                 </div>
-                <!-- form -->
-                <form action="{% url 'register' %}" method="post" id="registerForm" class="w-[60%]">
-                    {% csrf_token %}
-                    <input type="text" name="username" class="w-full bg-gray-200 rounded-lg p-2 outline-none mb-2" placeholder="Username" />
-                    <input type="email" name="email" class="w-full bg-gray-200 rounded-lg p-2 outline-none mb-2" placeholder="Email" />
-                    <input type="password" name="password1" class="w-full bg-gray-200 rounded-lg p-2 outline-none mb-2" placeholder="Password" />
-                    <input type="password" name="password2" class="w-full bg-gray-200 rounded-lg p-2 outline-none" placeholder="Confirm Password" />
-                    <div class="flex items-center justify-center my-3">
-                        <button id="signupButton" type="submit" class="bg-teal-700 text-white text-center mx-28 rounded-2xl p-3 w-1/2">Sign up</button>
+                <form action="" id="register-form">
+                    <input type="text" placeholder="Enter your username">
+                    <input type="email" placeholder="Enter your email">
+                    <input type="password" placeholder="Choose your password">
+                    <div class="btn-container">
+                        <button id="sign-up-btn">
+                            Sign up
+                        </button>
                     </div>
                 </form>
             </div>
