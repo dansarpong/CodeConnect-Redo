@@ -29,7 +29,7 @@ def leave_chatroom(request, chatroom_id):
 @login_required
 def chatroom(request, chatroom_id):
     chatroom = get_object_or_404(Chatroom, id=chatroom_id)
-    return render(request, 'core/tbd_chatpage.html', {'chatroom': chatroom})
+    return render(request, 'core/chatroom.html', {'chatroom': chatroom})
 
 def generate_unique_auth_link():
     import uuid
