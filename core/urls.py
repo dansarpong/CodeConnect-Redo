@@ -13,6 +13,7 @@ urlpatterns = [
     path('basic_view/', users.views.basic_view, name='basic_view'),
     path('fresh_view/', users.views.fresh_view, name='fresh_view'),
     path('profile/', users.views.profile, name='profile'),
+    path('chatroom/<int:chatroom_id>/', chatrooms.views.chatroom, name='chatroom'),
     path('create_chatroom/', chatrooms.views.create_chatroom, name='create_chatroom'),
     path('join_chatroom/<str:auth_link>/', chatrooms.views.join_chatroom, name='join_chatroom'),
     path('leave_chatroom/<int:chatroom_id>/', chatrooms.views.leave_chatroom, name='leave_chatroom'),

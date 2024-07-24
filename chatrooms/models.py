@@ -7,7 +7,7 @@ class Chatroom(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='chatrooms')
-    members = models.ManyToManyField(CustomUser, related_name='joined_chatrooms', blank=True)
+    members = models.ManyToManyField(CustomUser, related_name='joined_chatrooms', blank=False)
     admins = models.ManyToManyField(CustomUser, related_name='admin_chatrooms', blank=True)
     auth_link = models.CharField(max_length=255, unique=True)
 
@@ -25,3 +25,10 @@ class Chatroom(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Message(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    chatroom = models.ForeignKey(Chatroom, on_delete=models.CASCADE)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)

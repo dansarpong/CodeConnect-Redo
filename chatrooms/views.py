@@ -11,21 +11,26 @@ def create_chatroom(request):
         chatroom = Chatroom.objects.create(name=name, created_by=request.user, auth_link=auth_link)
         chatroom.add_member(request.user)
         chatroom.add_admin(request.user)
-        return redirect('dashboard')
+        return redirect('chatroom', chatroom_id=chatroom.id)
     return render(request, 'core/create_chatroom.html')
 
 @login_required
 def join_chatroom(request, auth_link):
     chatroom = get_object_or_404(Chatroom, auth_link=auth_link)
     chatroom.add_member(request.user)
-    return redirect('dashboard')
-
-def generate_unique_auth_link():
-    import uuid
-    return str(uuid.uuid4())
+    return redirect('chatroom', chatroom_id=chatroom.id)
 
 @login_required
 def leave_chatroom(request, chatroom_id):
     chatroom = get_object_or_404(Chatroom, id=chatroom_id)
     chatroom.remove_member(request.user)
     return redirect('dashboard')
+
+@login_required
+def chatroom(request, chatroom_id):
+    chatroom = get_object_or_404(Chatroom, id=chatroom_id)
+    return render(request, 'core/tbd_chatpage.html', {'chatroom': chatroom})
+
+def generate_unique_auth_link():
+    import uuid
+    return str(uuid.uuid4())

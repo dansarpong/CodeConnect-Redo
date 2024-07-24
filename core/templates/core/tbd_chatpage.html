@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Connect</title>
+    <link rel="stylesheet" href="{% static 'core/css/chatpage.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- Sidebar content -->
+        </div>
+        <div class="rightside">
+            <div class="header">
+                <!-- Header content -->
+            </div>
+            <div class="chatBox" id="chat-log">
+                {% for message in messages %}
+                    <div class="message {% if message.user == request.user %}my_message{% else %}group_message{% endif %}">
+                        <p>{{ message.content }}<br><span>{{ message.timestamp }}</span></p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="chatbox_input">
+                <ion-icon name="happy-outline"></ion-icon>
+                <ion-icon name="attach-outline"></ion-icon>
+                <input type="text" id="chat-message-input" placeholder="Type a message">
+                <ion-icon name="mic" id="chat-message-submit"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const chatroomId = "{{ chatroom.id }}";
+        const chatSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/chat/' + chatroomId + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const message = data.message;
+            const user = data.user;
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            if (user === '{{ request.user.username }}') {
+                messageElement.classList.add('my_message');
+            } else {
+                messageElement.classList.add('group_message');
+            }
+            messageElement.innerHTML = `<p>${message}<br><span>${new Date().toLocaleTimeString()}</span></p>`;
+            document.getElementById('chat-log').appendChild(messageElement);
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.getElementById('chat-message-input').focus();
+        document.getElementById('chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // Enter key
+                document.getElementById('chat-message-submit').click();
+            }
+        };
+
+        document.getElementById('chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.getElementById('chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>
