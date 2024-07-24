@@ -4,8 +4,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Channel</title>
-    <link rel="stylesheet" href="{% static 'core/css/create_channel.css' %}">
+    <title>Join Channel</title>
+    <link rel="stylesheet" href="{% static 'core/css/join_channel.css' %}">
 </head>
 <body>
     <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
@@ -153,33 +153,24 @@
             <div class="content-container">
                 <div class="cont-contain">
                     <div class="cont-cont">
-                        <p class="create-channel-text">Create Channels</p>
+                        <p class="create-channel-text">Join Channels</p>
                         <span class="sub-text">Channels are where your team communicates. They are best when they are organized around a topic - #lead for example</span>
                     </div>
                     
                     <div class="name-container">
                         <div>
-                            <label for="helper-text" class="name-label">Name</label>
-                            <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="name-input" placeholder="Name your channel">
-                            <p id="helper-text-explanation" class="channel-name-descrip">
-                                Names must be alphanumeric and unique from other Channels
-                            </p>
+                            <label for="helper-text" class="name-label">Link</label>
+                            <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="name-input" placeholder="Paste the link of the channel you want to join">
                         </div>
 
-                        <div class="purpose-container">
-                            <label for="helper-text" class="purpose-text">
-                                Description <span class="purpose-descrip">(optional)</span>
-                            </label>
-                            <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="description-field" placeholder="Enter the channel description">
-                            <p class="add-text">(What is this channel's purpose)</p>
-                        </div>
+                       
 
                         <div class="button-container">
                             <button type="button" class="cancel">
                                 Cancel
                             </button>
                             <button class="submit" type="button">
-                                Create Channel
+                                Join Channel
                             </button>
                         </div>
                     </div>
