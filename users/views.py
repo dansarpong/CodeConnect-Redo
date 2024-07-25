@@ -33,6 +33,14 @@ def signup(request):
         form = CustomUserCreationForm()
     return render(request, 'core/signup.html', {'form': form})
 
+def error_page(request):
+    message = request.session.get('error_message', 'An error occurred.')
+    return render(request, 'core/error_page.html', {'message': message})
+
+def set_error(request, message):
+    request.session['error_message'] = message
+    return redirect('error_page')
+
 @login_required
 def profile(request):
     if request.method == 'POST':

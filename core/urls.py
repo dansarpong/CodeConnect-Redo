@@ -8,6 +8,8 @@ import users.views, chatrooms.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', users.views.signin, name='signin'),
+    path('error_page/', users.views.error_page, name='error_page'),
+    path('set_error/<str:message>/', users.views.set_error, name='set_error'),
     path('signup/', users.views.signup, name='signup'),
     path('dashboard/', users.views.dashboard, name='dashboard'),
     path('basic_view/', users.views.basic_view, name='basic_view'),

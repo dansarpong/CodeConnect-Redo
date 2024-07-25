@@ -15,5 +15,11 @@
             Please try again
         </p>
     </div>
+    <a href="{% url 'dashboard' %}">Go back to dashboard</a>
+
+    <script>
+        const errorText = document.querySelector('.error-text');
+        errorText.innerHTML = 'An error occurred! <br> {{ request.session.error_message }}';
+    </script>
 </body>
 </html>

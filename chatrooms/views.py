@@ -29,6 +29,8 @@ def leave_chatroom(request, chatroom_id):
 @login_required
 def chatroom(request, chatroom_id):
     chatroom = get_object_or_404(Chatroom, id=chatroom_id)
+    if request.user not in chatroom.members.all():
+        return redirect('set_error', message="You are not a member of this chatroom.")
     return render(request, 'core/chatroom.html', {'chatroom': chatroom})
 
 def generate_unique_auth_link():
