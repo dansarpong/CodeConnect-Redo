@@ -38,8 +38,10 @@
 - [ ] Adopt base template usage for similar pages (Ask Sarpong for clarification)
 - [x] (suggestion) Change fresh_view to show join channel, create channel and account settings instead
 - [x] Fix error page to include redirect to dashboard
-- [ ] Provide signout option on appropriate pages
+- [ ] Provide signout option on appropriate pages <!-- Was thinking that you can do so at the account settings page Lemme know otherwise-->
   - [ ] Dashboard
   - [ ] Chatroom (?)
+
+  <!-- Was thinking that you can do so at the account settings page -->
 
 <!-- Put an x in the square brackets when done -->
