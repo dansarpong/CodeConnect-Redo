@@ -1,13 +1,17 @@
 # Todo List
 
-## For Sarpong:
+## For Sarpong
+
 - [x] Implement chat feature
-- [ ] Fix forgot password feature
-- [ ] Set up dashboard with chat feature
+- [x] Set base template
 - [ ] Set up dashboard with other working urls
-  - [ ] Profile
+  - [x] New Channel subs
   - [ ] Settings (?)
-  - [ ] Chatroom
+  - [ ] Profile
+- [ ] Set up basic view with
+  - [ ] Joined Channels
+  - [ ] Search feature
+- [ ] Fix forgot password feature
 - [ ] Set login URL to dashboard
 - [ ] Modify URL paths
 - [ ] Set up notifications
@@ -22,11 +26,14 @@
 - [ ] Add documentation in README.md
 - [ ] Add a license
 
-## For Nathan:
+## For Nathan
+
 - [ ] Add chatbot feature (with Sarpong)
 
+## For Albert
 
-## For Albert:
+- [ ] Adopt base template usage for similar pages (Ask Sarpong for clarification)
+- [ ] (suggestion) Change fresh_view to show join channel, create channel and account settings instead
 - [ ] Fix error page to include redirect to dashboard
 - [ ] Provide signout option on appropriate pages
   - [ ] Dashboard
