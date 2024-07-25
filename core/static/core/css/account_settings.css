@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(bg_img.png);
+    background-size: cover;
+}
+
+.sub-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FAFAFA;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.username{
+    text-align: center;
+    font-size: 0.875rem;
+    color: #626C75;
+}
+
+.user-img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.username-text{
+    color: #626C75;
+    font-weight: 600;
+}
+
+.online-status{
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #A729F5;
+}
+
+.details-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.details-sub-container{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.details-sub-container img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.name2{
+    text-align: left;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #626C75;
+}
+
+.name3{
+    text-align: right;
+    margin-left: 10rem;
+    color: #128C7E;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.email-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+}
+
+.email-img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.email-text{
+    text-align: left;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #626C75;
+}
+
+.main-email{
+    color: #128C7E;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: right;
+    margin-left: 10rem;
+    cursor: pointer;
+}
+
+.username-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem;
+}
+
+.username-img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.username2{
+    text-align: left;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #626C75;
+}
+
+.username2-text{
+    color: #128C7E;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: right;
+    margin-left: 8.25rem;
+    cursor: pointer;
+}
+
+.comments{
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #BDBDBD;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.25;
+}
+
+.cancel{
+    background: #FFFFFF;
+    color: #5E6870;
+    border-style: solid;
+    border-color: #128C7E;
+    font-weight: 500; /* font-medium */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem; 
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.cancel:focus{
+    outline: none;
+}
+
+.cancel:hover{
+    background: #128C7E;
+    color: #FFFFFF;
+}
+
+.submit{
+    background: #128C7E;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: #128C7E;
+    font-weight: 500; /* font-medium */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem; 
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.submit:focus{
+    outline: none;
+}
+
+.submit:hover{
+    background: #015f54;
+    color: #FFFFFF;
+}
