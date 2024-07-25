@@ -1,6 +1,10 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block title %}Dashboard{% endblock %}
+
+{% block cssfile %}{% static 'core/css/dashboard.css' %}{% endblock %}
 
 {% block content %}
 <iframe src="{% if request.session.new_user %}{% url 'fresh_view' %}{% else %}{% url 'basic_view' %}{% endif %}" frameborder="0"></iframe>

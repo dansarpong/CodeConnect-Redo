@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
 from .models import Chatroom
 
 
@@ -7,20 +8,33 @@ from .models import Chatroom
 def create_chatroom(request):
     if request.method == "POST":
         name = request.POST.get('name')
+        description = request.POST.get('description', '')
         auth_link = generate_unique_auth_link()
-        chatroom = Chatroom.objects.create(name=name, created_by=request.user, auth_link=auth_link)
-        chatroom.add_member(request.user)
-        chatroom.add_admin(request.user)
-        return redirect('chatroom', chatroom_id=chatroom.id)
+        chatroom = Chatroom(name=name, description=description, created_by=request.user, auth_link=auth_link)
+        
+        try:
+            chatroom.clean()
+            chatroom.save()
+            chatroom.add_member(request.user)
+            chatroom.add_admin(request.user)
+            return redirect('chatroom', chatroom_id=chatroom.id)
+        except ValidationError as e:
+            return render(request, 'core/create_channel.html', {'error': e.message})
+
     return render(request, 'core/create_channel.html')
 
 @login_required
 def join_chatroom(request):
     if request.method == "POST":
         auth_link = request.POST.get('auth_link')
-        chatroom = get_object_or_404(Chatroom, auth_link=auth_link)
-        chatroom.add_member(request.user)
-        return redirect('chatroom', chatroom_id=chatroom.id)
+
+        try:
+            chatroom = Chatroom.objects.get(auth_link=auth_link)
+            chatroom.add_member(request.user)
+            return redirect('chatroom', chatroom_id=chatroom.id)
+        except Chatroom.DoesNotExist:
+            return render(request, 'core/join_channel.html', {'error': 'Invalid authentication link.'})
+
     return render(request, 'core/join_channel.html')
 
 @login_required
@@ -38,4 +52,7 @@ def chatroom(request, chatroom_id):
 
 def generate_unique_auth_link():
     import uuid
-    return str(uuid.uuid4())
+    while True:
+        auth_link = str(uuid.uuid4())
+        if not Chatroom.objects.filter(auth_link=auth_link).exists():
+            return auth_link

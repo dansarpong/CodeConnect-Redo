@@ -4,16 +4,19 @@
 
 - [x] Implement chat feature
 - [x] Set base template
+- [x] Set up chatroom creation and joining
+- [x] Set login URL to dashboard
+- [x] Modify URL paths
 - [ ] Set up dashboard with other working urls
   - [x] New Channel subs
   - [ ] Settings (?)
   - [ ] Profile
+  - [ ] Notifications
 - [ ] Set up basic view with
   - [ ] Joined Channels
   - [ ] Search feature
+  - [ ] Profile
 - [ ] Fix forgot password feature
-- [ ] Set login URL to dashboard
-- [ ] Modify URL paths
 - [ ] Set up notifications
 - [ ] Refactor code:
   - [ ] Remove unused code

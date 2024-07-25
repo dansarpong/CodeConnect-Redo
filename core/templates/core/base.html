@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% block cssfile %}{% endblock %}">
 </head>
 <body>
     <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
@@ -15,7 +15,7 @@
                 Code Connect
             </h1>
             <div class="buttons">
-                <a href="" class="home-container">
+                <a href="{% url 'dashboard' %}" class="home-container">
                     <img src="{% static 'core/img/icons8_home_500px.png' %}" alt="" class="home-img">
                     <h1 class="home">
                         Home

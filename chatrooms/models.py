@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
+
 
 CustomUser = get_user_model()
 
 class Chatroom(models.Model):
     name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='chatrooms')
     members = models.ManyToManyField(CustomUser, related_name='joined_chatrooms', blank=False)
@@ -22,6 +25,10 @@ class Chatroom(models.Model):
 
     def remove_admin(self, user):
         self.admins.remove(user)
+
+    def clean(self):
+        if not self.name:
+            raise ValidationError("Name is required.")
 
     def __str__(self):
         return self.name
