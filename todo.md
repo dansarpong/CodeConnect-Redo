@@ -36,8 +36,8 @@
 ## For Albert
 
 - [ ] Adopt base template usage for similar pages (Ask Sarpong for clarification)
-- [ ] (suggestion) Change fresh_view to show join channel, create channel and account settings instead
-- [ ] Fix error page to include redirect to dashboard
+- [x] (suggestion) Change fresh_view to show join channel, create channel and account settings instead
+- [x] Fix error page to include redirect to dashboard
 - [ ] Provide signout option on appropriate pages
   - [ ] Dashboard
   - [ ] Chatroom (?)
