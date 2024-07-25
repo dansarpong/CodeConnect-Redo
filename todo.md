@@ -1,7 +1,7 @@
 # Todo List
 
 ## For Sarpong
-
+- [ ] Check account_settings.css there is a background url fix it
 - [x] Implement chat feature
 - [x] Set base template
 - [x] Set up chatroom creation and joining
