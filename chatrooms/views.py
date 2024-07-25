@@ -12,13 +12,16 @@ def create_chatroom(request):
         chatroom.add_member(request.user)
         chatroom.add_admin(request.user)
         return redirect('chatroom', chatroom_id=chatroom.id)
-    return render(request, 'core/create_chatroom.html')
+    return render(request, 'core/create_channel.html')
 
 @login_required
-def join_chatroom(request, auth_link):
-    chatroom = get_object_or_404(Chatroom, auth_link=auth_link)
-    chatroom.add_member(request.user)
-    return redirect('chatroom', chatroom_id=chatroom.id)
+def join_chatroom(request):
+    if request.method == "POST":
+        auth_link = request.POST.get('auth_link')
+        chatroom = get_object_or_404(Chatroom, auth_link=auth_link)
+        chatroom.add_member(request.user)
+        return redirect('chatroom', chatroom_id=chatroom.id)
+    return render(request, 'core/join_channel.html')
 
 @login_required
 def leave_chatroom(request, chatroom_id):
@@ -31,7 +34,7 @@ def chatroom(request, chatroom_id):
     chatroom = get_object_or_404(Chatroom, id=chatroom_id)
     if request.user not in chatroom.members.all():
         return redirect('set_error', message="You are not a member of this chatroom.")
-    return render(request, 'core/chatroom.html', {'chatroom': chatroom})
+    return render(request, 'core/channel.html', {'chatroom': chatroom})
 
 def generate_unique_auth_link():
     import uuid
