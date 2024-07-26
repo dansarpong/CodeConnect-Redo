@@ -54,8 +54,8 @@ def profile(request):
 
 @login_required
 def dashboard(request):
-    request.session['new_user'] = is_new_user(request.user)
-    print(request.session['new_user'])
+    if is_new_user(request.user):
+        return render(request, 'core/fresh_view.html')
     return render(request, 'core/dashboard.html')
 
 @login_required

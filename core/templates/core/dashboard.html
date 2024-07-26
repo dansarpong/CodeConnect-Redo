@@ -7,5 +7,71 @@
 {% block cssfile %}{% static 'core/css/dashboard.css' %}{% endblock %}
 
 {% block content %}
-<iframe src="{% if request.session.new_user %}{% url 'fresh_view' %}{% else %}{% url 'basic_view' %}{% endif %}" frameborder="0"></iframe>
+        <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
+        <div class="right-side-container">
+            <h1 class="message2">
+                Messages
+            </h1>
+            <div class="search-container2">
+                <div class="search2-container">
+                    <!-- <input type="text" placeholder="Search for messages or channels" class="search2"> -->
+                    <!-- avatar -->
+                     <div class="search-img-container2">
+                        <img src="{% static 'core/img/pexels-pixabay-207489 (1).jpg'}" alt="" class="search-img2">
+                     </div>
+                </div>
+                <!-- messages -->
+                <div class="messages2">
+                    <!-- messagesCard -->
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                    <div class="message-card2">
+                        <div class="avatar-container2">
+                            <!-- avatar -->
+                             <div class="avatar2">
+                                <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="" class="avatar-img2">
+                             </div>
+                             <!-- text -->
+                              <div class="text-container2">
+                                <h1 class="text2">Software Engineering</h1>
+                                <p class="message-text2">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum possimus qui impedit aliquid ea aperiam accusantium perferendis eos doloremque expedita! Aliquam, error! Labore facilis non accusamus neque corrupti repellendus suscipit.
+                                </p>
+                              </div>
+                        </div>
+                        <!-- timestamp -->
+                         <div class="time-container2">
+                            <!-- time -->
+                             <h1 class="time2">12:42</h1>
+                             <!-- number of unread messages -->
+                              <h1 class="number-unread2">4</h1>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="{% static 'core/img/icons8_lock_480px.png' %}" alt="" class="lock-img">
+                <h1 class="text-end">End-to-End-Encrypted</h1>
+            </div>
+        </div>
 {% endblock %}

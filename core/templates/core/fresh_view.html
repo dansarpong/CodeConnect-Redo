@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Start</title>
-    <link rel="stylesheet" href="{% static 'core/css/fresh_view.css' %}">
-</head>
-<body>
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block cssfile %}{% static 'core/css/fresh_view.css' %}{% endblock %}
+
+{% block content %}
     <div class="container">
         <div class="container-cont">
             <div class="container-cont-cont">
@@ -16,15 +15,15 @@
                     Let's get you sorted
                 </p>
                 <div class="menu-container">
-                    <a href="#"><div class="new-channel-cont">
+                    <a href="{% url 'create_chatroom' %}"><div class="new-channel-cont">
                         <img src="{% static 'core/img/icons8_create.svg' %}" alt="" class="new-channel-img">
                         <h1 class="new-channel-text">Create Channel</h1>
                     </div></a>
-                    <a href="#"><div class="profile-container">
+                    <a href="{% url 'join_chatroom' %}"><div class="profile-container">
                         <img src="{% static 'core/img/icons8_add_to_inbox.svg' %}" alt="" class="profile-img">
                         <h1 class="profile-text">Join Channel</h1>
                     </div></a>
-                    <a href="#"><div class="settings-cont">
+                    <a href="{% url 'profile' %}"><div class="settings-cont">
                         <img src="{% static 'core/img/icons8_settings_1.svg' %}" alt="" class="settings-img">
                         <h1 class="settings-text">
                             Account Settings
@@ -34,5 +33,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

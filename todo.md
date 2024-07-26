@@ -40,9 +40,13 @@
 - [ ] channel page
   - [ ] Center user pic at the top left
 - [ ] Dashboard
+  - [ ] General looks fix (Check website -> urls in django working with iframes is a problem)
   - [ ] Change settings to help button
   - [ ] Redesign basic view with profile pic centered at the top of the messages
+- [ ] Fresh view looks fix
 - [ ] Create a notifications page with base templates to view all read and unread notifications (?)
+
+<!-- side note: i renamed basic_view.html and css to dashboard. Hence the original dashboard html and css files have been deleted. Chech github old commits if you need them -->
 
 
 
