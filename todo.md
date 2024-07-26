@@ -46,6 +46,11 @@
 - [ ] Fresh view looks fix
 - [ ] Create a notifications page with base templates to view all read and unread notifications (?)
 
+- [ ] Reduce the opacity of sec.png base.html // dashboard.html
+- [ ] Style and general looks send button channel.html
+- [ ] Channel.html remove 3 dots make top anchor tag
+
+
 <!-- side note: i renamed basic_view.html and css to dashboard. Hence the original dashboard html and css files have been deleted. Chech github old commits if you need them -->
 
 
