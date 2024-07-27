@@ -45,7 +45,7 @@
   - [x] Change settings to help button
   - [x] Redesign basic view with profile pic centered at the top of the messages
 - [x] Fresh view looks fix
-- [ ] Create a notifications page with base templates to view all read and unread notifications (?)
+- [x] Create a notifications page with base templates to view all read and unread notifications (?)
 - [x] Fix: all anchor tags have an underline (remove underline, what you were complaining about)
 - [x] Reduce the opacity of sec.png base.html // dashboard.html
 - [x] Style and general looks send button channel.html
