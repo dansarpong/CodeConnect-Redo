@@ -1,13 +1,9 @@
-from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
-from django.views.generic.edit import FormView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.clickjacking import xframe_options_exempt
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 from chatrooms.models import Chatroom
-from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 def signin(request):
@@ -62,27 +58,12 @@ def dashboard(request):
     return render(request, 'core/dashboard.html', {'rooms_joined': rooms_joined})
 
 @login_required
-@xframe_options_exempt
 def basic_view(request):
     return render(request, 'core/basic_view.html')
 
 @login_required
-@xframe_options_exempt
 def fresh_view(request):
     return render(request, 'core/fresh_view.html')
 
-class CustomPasswordResetView(PasswordResetView):
-    template_name = 'core/password_reset.html'
-    email_template_name = 'core/password_reset_email.html'
-    success_url = reverse_lazy('password_reset_done')
-
-class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'core/password_reset_done.html'
-
-class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'core/password_reset_confirm.html'
-    form_class = CustomSetPasswordForm
-    success_url = reverse_lazy('password_reset_complete')
-
-class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'core/password_reset_complete.html'
+def forgot_password(request):
+    return render(request, 'core/forgot_password.html')
