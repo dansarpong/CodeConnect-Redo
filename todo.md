@@ -2,6 +2,8 @@
 
 ## For Sarpong
 
+- [ ] Check the password success page. Don't know what the script file at the buttom that I have commented is for. 
+      I copied and made changes to the error pages so I don't know the use for that one. Check and delete if necessary.
 - [ ] Set up dashboard with other working urls
 - [x] Set up dashboard with
   - [x] Joined channels
@@ -50,10 +52,10 @@
 - [x] Reduce the opacity of sec.png base.html // dashboard.html
 - [x] Style and general looks send button channel.html
 - [x] Channel.html remove 3 dots make top anchor tag
-- [ ] Create pages:
+- [x] Create pages:
   - [x] Forgot password otp page (to type otp sent to email)
   - [x] Forgot password new password page (to type new password)
-  - [ ] password reset done page
+  - [x] password reset done page
 
 
 <!-- side note: i renamed basic_view.html and css to dashboard. Hence the original dashboard html and css files have been deleted. Chech github old commits if you need them -->
