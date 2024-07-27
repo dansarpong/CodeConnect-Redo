@@ -51,8 +51,8 @@
 - [x] Style and general looks send button channel.html
 - [x] Channel.html remove 3 dots make top anchor tag
 - [ ] Create pages:
-  - [ ] Forgot password otp page (to type otp sent to email)
-  - [ ] Forgot password new password page (to type new password)
+  - [x] Forgot password otp page (to type otp sent to email)
+  - [x] Forgot password new password page (to type new password)
   - [ ] password reset done page
 
 
