@@ -43,3 +43,31 @@ body {
     color: #626C75;
     font-size: 1.5rem;
 }
+
+
+.dashboard-btn{
+    background: #128C7E;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: #128C7E;
+    font-weight: 500; /* font-medium */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem; 
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.dashboard-btn:focus{
+    outline: none;
+}
+
+.dashboard-btn:hover{
+    background: #015f54;
+    color: #FFFFFF;
+}

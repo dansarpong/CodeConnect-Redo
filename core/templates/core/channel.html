@@ -12,14 +12,42 @@
         <div class="sidebar">
             <!-- header -->
             <div class="header">
-                <div class="userimg">
-                    <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
-                </div>
+                <a href="{% url 'dashboard' %}">
+                    <div class="userimg">
+                        <ion-icon name="home" class="cover"></ion-icon>
+                    </div>
+                </a>
                 <ul class="nav_icons">
-                    <!-- <li><ion-icon name="scan-circle-outline"></ion-icon></li> -->
-                    <!-- <li><ion-icon name="chatbox"></ion-icon></li> -->
-                    <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                    <li>
+                        <ion-icon name="ellipsis-vertical" class="pop-up"></ion-icon>
+                        <div class="pop-up-menu">
+                            <ul>
+                                <li><a href="{% url 'create_chatroom' %}">Create Channel</a></li>
+                                <li><a href="{% url 'join_chatroom' %}">Join Channel</a></li>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                                <li><a href="{% url 'signin' %}">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        const ellipsisIcon = document.querySelector('.pop-up');
+                        const popUpMenu = document.querySelector('.pop-up-menu');
+                    
+                        ellipsisIcon.addEventListener('click', () => {
+                            popUpMenu.classList.toggle('show');
+                        });
+                    
+                        // Close the pop-up menu if clicked outside
+                        document.addEventListener('click', (event) => {
+                            if (!ellipsisIcon.contains(event.target) && !popUpMenu.contains(event.target)) {
+                                popUpMenu.classList.remove('show');
+                            }
+                        });
+                    });
+                    </script>
             </div>
             <!-- Search -->
             <!-- <div class="search_chat"> -->
@@ -32,7 +60,7 @@
             <!-- Chat list -->
             <div class="chatlist">
                 {% for room in rooms_joined %}
-                <a href="{% url 'chatroom' room.id %}">
+                <a href="{% url 'chatroom' room.id %}" class="channel-details">
                 <div class="block {% if room.id == chatroom.id %}active{% endif %}">
                     <div class="imgbx">
                         <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
@@ -54,18 +82,23 @@
 
         <!-- Chat page -->
         <div class="rightside">
-            <div class="header">
-                <div class="imgText">
-                    <div class="userimg">
-                        <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
+
+            <!-- Channel details fix -->
+            <a href="" class="channel-details">
+                <div class="header">
+                    <div class="imgText">
+                        <div class="userimg">
+                            <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
+                        </div>
+                        <h4 id="room_name" style="text-decoration: none;">{{ chatroom.name }}</h4>
                     </div>
-                    <h4 id="room_name">{{ chatroom.name }}</h4>
+                    <!-- <ul class="nav_icons"> -->
+                        <!-- <li><ion-icon name="search-outline"></ion-icon></li> -->
+                        <!-- <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                    </ul> -->
                 </div>
-                <ul class="nav_icons">
-                    <!-- <li><ion-icon name="search-outline"></ion-icon></li> -->
-                    <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
-                </ul>
-            </div>
+            </a>
+            
             <!-- chatbox -->
             <div class="chatBox" id="chatBox">
 
@@ -76,7 +109,9 @@
                 <ion-icon name="attach-outline"></ion-icon>
                 <input type="text" id="messageInput" placeholder="Type a message">
                 <!-- <ion-icon name="mic"></ion-icon> -->
-                <button onclick="sendMessage()">Send</button>
+                <button onclick="sendMessage()" class="send-btn">
+                    <ion-icon name="send" class="send-button" style="color: #128C7E;"></ion-icon>
+                </button>
             </div>
         </div>
     </div>

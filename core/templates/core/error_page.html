@@ -19,8 +19,11 @@
             An error occurred! <br>
             Please try again
         </p>
+        <a href="{% url 'dashboard' %}" >
+            <button class="dashboard-btn">Go back to dashboard</button>
+        </a>
     </div>
-    <a href="{% url 'dashboard' %}">Go back to dashboard</a>
+    
 
     <script>
         const errorText = document.querySelector('.error-text');

@@ -17,6 +17,10 @@
   - [ ] Set up Postgres
 - [ ] Add documentation in README.md
 - [ ] Add a license
+- [ ] chat room 100 did not come
+- [ ] Profile not working
+- [ ] If you see any anchor tag with underline you lemme know in my todo. Specify the page and everything
+
 
 
 
@@ -28,24 +32,24 @@
 
 ## For Albert
 
-- [ ] Fix all pages for responsiveness (mobile and desktop)
-- [ ] Adopt base template usage for similar pages (Ask Sarpong for clarification)
-- [ ] Provide signout option on appropriate pages
-- [ ] Error page
-  - [ ] Design redirect button
-- [ ] channel page
-  - [ ] Change user pic at the top left to home button to send to dashboard instead
-  - [ ] Ellipsis at the top left options: Create channel, join channel, profile
-- [ ] Dashboard
-  - [ ] General looks fix (Check website -> urls in django working with iframes is a problem)
-  - [ ] Change settings to help button
-  - [ ] Redesign basic view with profile pic centered at the top of the messages
-- [ ] Fresh view looks fix
+- [x] Fix all pages for responsiveness (mobile and desktop)
+- [x] Adopt base template usage for similar pages (Ask Sarpong for clarification)
+- [x] Provide signout option on appropriate pages
+- [x] Error page
+  - [x] Design redirect button
+- [x] channel page
+  - [x] Change user pic at the top left to home button to send to dashboard instead
+  - [x] Ellipsis at the top left options: Create channel, join channel, profile
+- [x] Dashboard
+  - [x] General looks fix (Check website -> urls in django working with iframes is a problem)
+  - [x] Change settings to help button
+  - [x] Redesign basic view with profile pic centered at the top of the messages
+- [x] Fresh view looks fix
 - [ ] Create a notifications page with base templates to view all read and unread notifications (?)
-- [ ] Fix: all anchor tags have an underline (remove underline, what you were complaining about)
-- [ ] Reduce the opacity of sec.png base.html // dashboard.html
-- [ ] Style and general looks send button channel.html
-- [ ] Channel.html remove 3 dots make top anchor tag
+- [x] Fix: all anchor tags have an underline (remove underline, what you were complaining about)
+- [x] Reduce the opacity of sec.png base.html // dashboard.html
+- [x] Style and general looks send button channel.html
+- [x] Channel.html remove 3 dots make top anchor tag
 - [ ] Create pages:
   - [ ] Forgot password otp page (to type otp sent to email)
   - [ ] Forgot password new password page (to type new password)

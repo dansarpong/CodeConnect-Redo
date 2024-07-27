@@ -22,7 +22,7 @@
                     {% csrf_token %}
                     <input type="email" class="email" name="email" placeholder="Enter your email">
                     <input type="password" name="password" placeholder="Password">
-                    <a href="{% url 'forgot_password' %}" class="forgot-password-container">
+                    <a href="{% url 'forgot_password' %}" class="forgot-password-container" style="text-decoration: none;">
                         <p class="forgot-password">
                             Forgot Password?
                         </p>

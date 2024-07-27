@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% block cssfile %}{% endblock %}">
 </head>
 <body>
-    <!-- <img src="{% static 'core/img/sec.png' %}" alt="" class="img"> -->
+    <img src="{% static 'core/img/sec.png' %}" alt="" class="img">
     <div class="side-bar-container">
         <div class="side-bar">
             <h1 class="code-connect">
@@ -66,13 +66,24 @@
                 <div class="settings-container">
                     <button id="men-btn">
                         <div class="settings-container-container">
-                            <img src="{% static 'core/img/icons8_settings_208px.png' %}" alt="" class="settings-cont-img">
-                            <h1 class="settings">Settings</h1>
+                            <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="settings-cont-img">
+                            <h1 class="settings">Help</h1>
                         </div>
-                        <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img">
+                        <!-- <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img"> -->
                     </button>
+                    <a href="{% url 'signin' %}" style="text-decoration: none;">
+                        <button id="men-btn" style="margin-top: 1.25rem;">
+                            <div class="settings-container-container">
+                                <img src="{% static 'core/img/pngwing.com.png' %}" alt="" class="settings-cont-img">
+                                <h1 class="settings">Logout</h1>
+                            </div>
+                            <!-- <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img"> -->
+                        </button>
+                    </a>
+                    
+                    
 
-                    <div id="dropdon" class="hidden">
+                    <!-- <div id="dropdon" class="hidden">
                         <hr class="rule">
                         <a href="#" class="account-container">
                             <img src="{% static 'core/img/icons8_admin_settings_male.svg' %}" alt="" class="account-container-img">
@@ -86,8 +97,8 @@
                             <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="help-container-img">
                             <h1 class="help">Help</h1>
                         </a>
-                    </div>
-                    <script>
+                    </div> -->
+                    <!-- <script>
                         window.addEventListener('DOMContentLoaded', ()=> {
                             const menuBtn = document.querySelector('#men-btn')
                             const dropdown = document.querySelector('#dropdon')
@@ -102,8 +113,11 @@
                                 }
                             })
                         })
-                    </script>
+                    </script> -->
+                    
                 </div>
+
+                
                 
             </div>
 
@@ -147,6 +161,8 @@
                 </div>
              </div>
         </div>
+
+        
         {% block content %}
         <!-- Content here -->
         {% endblock %}
