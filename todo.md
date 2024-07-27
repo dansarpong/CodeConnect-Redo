@@ -2,6 +2,8 @@
 
 ## For Sarpong
 
+- [ ] Don't touch any css file
+
 - [ ] Check the password success page. Don't know what the script file at the buttom that I have commented is for. 
       I copied and made changes to the error pages so I don't know the use for that one. Check and delete if necessary.
 - [ ] Set up dashboard with other working urls
