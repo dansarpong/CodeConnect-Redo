@@ -31,21 +31,24 @@
 
             <!-- Chat list -->
             <div class="chatlist">
-                <div class="block active">
+                {% for room in rooms_joined %}
+                <a href="{% url 'chatroom' room.id %}">
+                <div class="block {% if room.id == chatroom.id %}active{% endif %}">
                     <div class="imgbx">
                         <img src="{% static 'core/img/icons8_male_user.svg' %}" alt="profile icon" class="cover">
                     </div>
                     <div class="details">
                         <div class="listHead">
-                            <h4>Software Engineering 201</h4>
-                            <p class="time">10:56</p>
+                            <h4>{{ room.name }}</h4>
+                            <!-- <p class="time">10:56</p> -->
                         </div>
                         <div class="message_p">
-                            <p>How to implement docker using nginx</p>
+                            <p>{{ room.description }}</p>
                         </div>
                     </div>
                 </div>
-                <!-- Add more chat blocks as needed -->
+                </a>
+                {% endfor %}
             </div>
         </div>
 
@@ -56,7 +59,7 @@
                     <div class="userimg">
                         <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="userimg" class="cover">
                     </div>
-                    <h4 id="room_name">Software Engineering 201</h4>
+                    <h4 id="room_name">{{ chatroom.name }}</h4>
                 </div>
                 <ul class="nav_icons">
                     <!-- <li><ion-icon name="search-outline"></ion-icon></li> -->

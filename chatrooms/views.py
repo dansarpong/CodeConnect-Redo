@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
+
 from .models import Chatroom
 
 
@@ -48,7 +49,9 @@ def chatroom(request, chatroom_id):
     chatroom = get_object_or_404(Chatroom, id=chatroom_id)
     if request.user not in chatroom.members.all():
         return redirect('set_error', message="You are not a member of this chatroom.")
-    return render(request, 'core/channel.html', {'chatroom': chatroom})
+    rooms_joined = Chatroom.objects.filter(members=request.user)
+    print(rooms_joined)
+    return render(request, 'core/channel.html', {'chatroom': chatroom, 'rooms_joined': rooms_joined})
 
 def generate_unique_auth_link():
     import uuid

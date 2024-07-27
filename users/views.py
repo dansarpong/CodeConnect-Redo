@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
+from chatrooms.models import Chatroom
 from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
 
 
@@ -54,9 +55,11 @@ def profile(request):
 
 @login_required
 def dashboard(request):
-    if is_new_user(request.user):
+    rooms_joined = Chatroom.objects.filter(members=request.user)
+    print(rooms_joined)
+    if not rooms_joined.exists():
         return render(request, 'core/fresh_view.html')
-    return render(request, 'core/dashboard.html')
+    return render(request, 'core/dashboard.html', {'rooms_joined': rooms_joined})
 
 @login_required
 @xframe_options_exempt
@@ -67,13 +70,6 @@ def basic_view(request):
 @xframe_options_exempt
 def fresh_view(request):
     return render(request, 'core/fresh_view.html')
-
-def is_new_user(user):
-    from datetime import timedelta
-    from django.utils import timezone
-    time = timezone.now() - user.date_joined
-    print(time)
-    return (timezone.now() - user.date_joined) <= timedelta(hours=24)
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'core/password_reset.html'
