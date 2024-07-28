@@ -2,13 +2,8 @@
 
 ## For Sarpong
 
-- [ ] Don't touch any css file
-
-- [ ] Check the password success page. Don't know what the script file at the buttom that I have commented is for. 
+- [ ] Check the password success page. Don't know what the script file at the buttom that I have commented is for.
       I copied and made changes to the error pages so I don't know the use for that one. Check and delete if necessary.
-- [ ] Set up dashboard with other working urls
-- [x] Set up dashboard with
-  - [x] Joined channels
 - [ ] Fix forgot password feature
 - [ ] Set up notifications
 - [ ] Refactor code:
@@ -21,47 +16,14 @@
   - [ ] Set up Postgres
 - [ ] Add documentation in README.md
 - [ ] Add a license
-- [ ] chat room 100 did not come
-- [ ] Profile not working
-- [ ] If you see any anchor tag with underline you lemme know in my todo. Specify the page and everything
-
-
-
 
 ## For Nathan
 
 - [ ] Add chatbot feature (with Sarpong)
 
-
-
 ## For Albert
 
-- [x] Fix all pages for responsiveness (mobile and desktop)
-- [x] Adopt base template usage for similar pages (Ask Sarpong for clarification)
-- [x] Provide signout option on appropriate pages
-- [x] Error page
-  - [x] Design redirect button
-- [x] channel page
-  - [x] Change user pic at the top left to home button to send to dashboard instead
-  - [x] Ellipsis at the top left options: Create channel, join channel, profile
-- [x] Dashboard
-  - [x] General looks fix (Check website -> urls in django working with iframes is a problem)
-  - [x] Change settings to help button
-  - [x] Redesign basic view with profile pic centered at the top of the messages
-- [x] Fresh view looks fix
-- [x] Create a notifications page with base templates to view all read and unread notifications (?)
-- [x] Fix: all anchor tags have an underline (remove underline, what you were complaining about)
-- [x] Reduce the opacity of sec.png base.html // dashboard.html
-- [x] Style and general looks send button channel.html
-- [x] Channel.html remove 3 dots make top anchor tag
-- [x] Create pages:
-  - [x] Forgot password otp page (to type otp sent to email)
-  - [x] Forgot password new password page (to type new password)
-  - [x] password reset done page
-
-
-<!-- side note: i renamed basic_view.html and css to dashboard. Hence the original dashboard html and css files have been deleted. Chech github old commits if you need them -->
-
-
+- [ ] Add profile pic on dashboard as option for user to edit profile
+- [ ] Error page no longer shows red x image (Check by visiting a wrong url -> http://127.0.0.1:8000/chatrooms/chatroom/100/)
 
 <!-- Put an x in the square brackets when done -->

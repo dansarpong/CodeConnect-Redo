@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Account Settings</title>
+        <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="sub-container">
+                <p class="username">
+                    <img src="{% static 'core/img/icons8_customer_208px.png' %}" alt="" class="user-img">
+                    <p class="username-text">
+                        Username
+                    </p>
+                </p>
+                <div class="details-container">
+                    
+                    <div class="email-container">
+                        <img src="{% static 'core/img/icons8_mail_500px_1.png' %}" alt="" class="email-img">
+                        <p class="email-text">Email</p>
+                        <p class="main-email" onclick="makeEditable(this)">email@example.com</p>
+                    </div>
+
+                    <div class="username-container">
+                        <img src="{% static 'core/img/icons8_name_208px.png' %}" alt="" class="username-img">
+                        <p class="username2">Username</p>
+                        <p class="username2-text" onclick="makeEditable(this)">Username</p>
+                    </div>
+
+                    <div class="username-container">
+                        <img src="{% static 'core/img/icons8_lock_480px.png' %}" alt="" class="username-img">
+                        <p class="username2">Password</p>
+                        <p class="username2-text" onclick="makeEditable(this)">****</p>
+                    </div>
+
+                    <div class="add-comments">
+                        <h1 class="comments">
+                            Make changes to your account here
+                        </h1>
+                    </div>
+
+                    
+                </div>
+                <div class="button-container">
+                    <button type="button" class="cancel">
+                        Cancel
+                    </button>
+                    <button class="submit" type="submit">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function makeEditable(element) {
+                const currentText = element.textContent;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = currentText;
+                input.onblur = () => {
+                    element.textContent = input.value;
+                    element.style.display = 'inline';
+                };
+                input.onkeydown = (e) => {
+                    if (e.key === 'Enter') {
+                        input.blur();
+                    }
+                };
+                element.textContent = '';
+                element.appendChild(input);
+                input.focus();
+            }
+            
+            document.getElementsByClassName('cancel')[0].addEventListener('click', function() {
+                window.location.href = "{% url 'dashboard' %}";
+            });
+        </script>
+    </body>
+</html>

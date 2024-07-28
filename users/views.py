@@ -30,6 +30,10 @@ def signup(request):
         form = CustomUserCreationForm()
     return render(request, 'core/signup.html', {'form': form})
 
+def logout(request):
+    request.session.flush()
+    return redirect('dashboard')
+
 def error_page(request):
     message = request.session.get('error_message', 'An error occurred.')
     return render(request, 'core/error_page.html', {'message': message})

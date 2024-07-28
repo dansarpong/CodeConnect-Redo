@@ -64,20 +64,21 @@
                 </div>
 
                 <div class="settings-container">
-                    <button id="men-btn">
-                        <div class="settings-container-container">
-                            <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="settings-cont-img">
-                            <h1 class="settings">Help</h1>
-                        </div>
-                        <!-- <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img"> -->
-                    </button>
-                    <a href="{% url 'signin' %}" style="text-decoration: none;">
+                    <a href="{% url 'help'}" style="text-decoration: none;">
+                        <button id="men-btn">
+                            <div class="settings-container-container">
+                                <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="settings-cont-img">
+                                <h1 class="settings">Help</h1>
+                            </div>
+                        </button>
+                    </a>
+
+                    <a href="{% url 'logout' %}" style="text-decoration: none;">
                         <button id="men-btn" style="margin-top: 1.25rem;">
                             <div class="settings-container-container">
                                 <img src="{% static 'core/img/pngwing.com.png' %}" alt="" class="settings-cont-img">
                                 <h1 class="settings">Logout</h1>
                             </div>
-                            <!-- <img src="{% static 'core/img/icons8_down_button.svg' %}" alt="" class="dropdown-img"> -->
                         </button>
                     </a>
                     
