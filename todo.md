@@ -24,6 +24,6 @@
 ## For Albert
 
 - [ ] Add profile pic on dashboard as option for user to edit profile
-- [ ] Error page no longer shows red x image (Check by visiting a wrong url -> http://127.0.0.1:8000/chatrooms/chatroom/100/)
+- [x] Error page no longer shows red x image (Check by visiting a wrong url -> http://127.0.0.1:8000/chatrooms/chatroom/100/)
 
 <!-- Put an x in the square brackets when done -->
