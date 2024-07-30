@@ -404,3 +404,13 @@ body{
 .send-button{
     color: #009688;
 }
+
+#username{
+    color: #A729F5;
+    font-weight: 600;
+}
+
+#username2{
+    color: #EE5454;
+    font-weight: 600;
+}

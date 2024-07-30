@@ -63,8 +63,17 @@
                     </script>
                 </div>
 
-                <div class="settings-container">
-                    <a href="{% url 'help'}" style="text-decoration: none;">
+                <div class="settings-container" style="margin-bottom: 10rem;">
+                    <a href="{% url 'profile' %}" style="text-decoration: none; margin-bottom: 1.25rem;">
+                        <button id="men-btn">
+                            <div class="settings-container-container">
+                                <img src="{% static 'core/img/icons8_customer_2081px.png' %}" alt="" class="settings-cont-img">
+                                <h1 class="settings">Profile</h1>
+                            </div>
+                        </button>
+                    </a>
+
+                    <a href="{% url 'help' }" style="text-decoration: none;">
                         <button id="men-btn">
                             <div class="settings-container-container">
                                 <img src="{% static 'core/img/icons8_help.svg' %}" alt="" class="settings-cont-img">
