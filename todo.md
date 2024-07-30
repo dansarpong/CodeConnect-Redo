@@ -25,5 +25,6 @@
 
 - [x] Add profile pic on dashboard as option for user to edit profile
 - [x] Error page no longer shows red x image (Check by visiting a wrong url -> http://127.0.0.1:8000/chatrooms/chatroom/100/)
+- [ ] Thread and channel management page
 
 <!-- Put an x in the square brackets when done -->
